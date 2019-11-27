@@ -1,0 +1,26 @@
+
+GET http://localhost:5000/users
+
+###
+
+GET http://localhost:5000/exercises/5ddc85e73c41291b80cded99
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name":"ife"
+}
+
+###
+POST http://localhost:5000/exercises/5ddd3a93a557eb17e0a9c024
+Content-Type: application/json
+
+{
+    "exercise": "jogger",
+    "duration": 600
+  }
+
+###
+GET http://localhost:5000/exercises/5ddd3a93a557eb17e0a9c024
