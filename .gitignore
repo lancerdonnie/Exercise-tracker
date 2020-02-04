@@ -1,5 +1,4 @@
 client/node_modules/
 node_modules/
-package.json
 .env
 test.rest
