@@ -1,22 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body {
+  font-size: 1.5rem;
+  margin: unset;
+  font-family: Montserrat;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #1f604f;
+  color: white;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 30px;
+}
+.home h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+option,
+select {
+  text-transform: capitalize;
+}
+input,
+select {
+  border: none;
+  padding: 1rem;
+  border-radius: 20px;
+  outline: none;
+}
+input:focus {
+  border: 1px solid blue;
+}
+
+button {
+  border: none;
+  border-radius: 20px;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: #333;
   color: white;
 }
+button:hover {
+  animation-name: buttonh;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes buttonh {
+  0% {
+    /* background-color: blue; */
+  }
+  100% {
+    background-color: black;
+  }
+}
+.adduser {
+  display: flex;
+  justify-content: center;
+}
+.adduser input {
+  margin-right: 20px;
+  border: 1px #333 solid;
+}
 
-.App-link {
-  color: #09d3ac;
+.users {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.users > select {
+  border: 1px #333 solid;
+  border-radius: 20px;
+  min-width: 150px;
+  margin-right: 20px;
+}
+
+.exercises {
+  display: flex;
+  justify-content: center;
+  margin: 0 60px;
+  margin-top: 60px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #600927;
+  padding-bottom: 30px;
+}
+
+.exercises form input {
+  margin-right: 20px;
+}
+.exercises form label {
+  margin-right: 20px;
+}
+
+.excercisedetails {
+  opacity: 0;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #7ec32e;
+  width: 70%;
+  justify-content: space-between;
+  padding: 10px;
+  text-transform: capitalize;
+  animation-name: details;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes details {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.excercisebuttons button:nth-child(1) {
+  margin-right: 10px;
+}
+.excercisebuttons button {
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .exercises form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .exercises form input,
+  .exercises form label {
+    margin-top: 10px;
+  }
+  .exercises button {
+    margin-top: 20px;
+    width: 150px;
+  }
+  .excercisedetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .excercisebuttons {
+    text-align: center;
+  }
 }

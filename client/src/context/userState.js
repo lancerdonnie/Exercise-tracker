@@ -25,13 +25,19 @@ const UserState = props => {
     const adduser = { name: user };
 
     try {
-      await axios.post('/users', adduser);
-      getUsers();
+      const res = await axios.post('/users', adduser);
+      await getUsers();
+      // console.log(state.users);
+      // var e = state.users.find(x => {
+      //   return x.name === adduser;
+      // });
+      // setSelected(e);
     } catch (error) {
       console.log(error);
     }
   };
   const setSelected = async selectedName => {
+    console.log(selectedName);
     if (selectedName === 'select') {
       dispatch({ type: 'CLEAR_SELECTED_USER' });
       dispatch({ type: 'CLEAR_EXERCISES' });
@@ -85,6 +91,7 @@ const UserState = props => {
       await axios.delete(`/users/${state.currentUser._id}`);
       getUsers();
       dispatch({ type: 'CLEAR_EXERCISES' });
+      dispatch({ type: 'CLEAR_SELECTED_USER' });
     } catch (error) {
       console.log(error);
     }

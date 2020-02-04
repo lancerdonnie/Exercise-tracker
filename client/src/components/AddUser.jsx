@@ -10,19 +10,21 @@ const AddUser = () => {
   };
   const handleUser = e => {
     e.preventDefault();
-    submitUser(text);
-    setText('');
+    if (text.length > 1) {
+      submitUser(text);
+      setText('');
+    }
   };
   return (
-    <div>
+    <div className='adduser'>
       <form onSubmit={handleUser}>
         <input
           onChange={addText}
           type='text'
           value={text}
-          placeholder='add a user'
+          placeholder='Add a user'
         />
-        <button type='submit'>Add user</button>
+        <button type='submit'>Add a user</button>
       </form>
     </div>
   );

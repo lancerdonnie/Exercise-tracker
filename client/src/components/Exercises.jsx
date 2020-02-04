@@ -45,22 +45,23 @@ const Exercises = () => {
   };
   return (
     currentUser !== null && (
-      <div>
-        <h1>Add exercise</h1>
+      <div className='exercises'>
+        <h3>Add exercise</h3>
         <form onSubmit={handleSubmit}>
-          <label htmlFor=''>Exercise:</label>
+          <label htmlFor=''>Exercise</label>
           <input
             name='exercise'
             onChange={handleChange}
             value={form.exercise}
             type='text'
           />
-          <label htmlFor=''>Duration:</label>
+          <label htmlFor=''>Duration</label>
           <input
             name='duration'
             onChange={handleChange}
             value={form.duration}
             type='text'
+            placeholder='In minutes'
           />
 
           {currentExercise === null && <button type='submit'>Submit</button>}
@@ -70,13 +71,15 @@ const Exercises = () => {
         {exercises.length > 0 &&
           exercises.map(x => {
             return (
-              <div key={x._id}>
-                <button onClick={deleteExercise.bind(this, x._id)}>x</button>
-                <button onClick={handleUpdateExercise.bind(this, x._id)}>
-                  update
-                </button>
-                <h1>{x.exercise}</h1>
-                <h2>{x.duration} minutes</h2>
+              <div className='excercisedetails' key={x._id}>
+                <p>{x.exercise}</p>
+                <p>{x.duration} minutes</p>
+                <div className='excercisebuttons'>
+                  <button onClick={handleUpdateExercise.bind(this, x._id)}>
+                    update
+                  </button>
+                  <button onClick={deleteExercise.bind(this, x._id)}>x</button>
+                </div>
               </div>
             );
           })}

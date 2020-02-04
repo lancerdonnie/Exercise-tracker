@@ -5,7 +5,8 @@ import Exercises from './Exercises';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
+      <h2>Exercise Tracker</h2>
       <AddUser />
       <Users />
       <Exercises />
