@@ -8,6 +8,12 @@ export default (state, action) => {
       return { ...state, currentUser: null };
     case 'SET_EXERCISES':
       return { ...state, exercises: action.payload };
+    case 'CLEAR_EXERCISES':
+      return { ...state, exercises: [] };
+    case 'SET_CURRENT_EXERCISE':
+      return { ...state, currentExercise: action.payload };
+    case 'CLEAR_CURRENT_EXERCISE':
+      return { ...state, currentExercise: null };
     default:
       return state;
   }
